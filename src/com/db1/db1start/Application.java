@@ -16,11 +16,16 @@ Application {
         return numero1 / numero2;
     }
     public Boolean par(Integer numero1) {
-        if (numero1 % 2  == 0){
+        if (eImpar(numero1)){
             return true;
         }
         return false;
     }
+    //Método que define se é Impar.
+    private boolean eImpar(Integer numero1) {
+        return numero1 % 2  == 0;
+    }
+
     public Integer maior(Integer num1,Integer num2){
         if (num1 > num2){
             return num1;
@@ -30,7 +35,7 @@ Application {
     public Integer quantidadeImpar(Integer num1){
         Integer numImpar = 0;
         for (Integer i=0; i<num1; i++ ){
-            if (i % 2 != 0){
+            if (eImpar(i)){
                 numImpar++;
             }
         }
@@ -63,9 +68,8 @@ Application {
     }
 
     public Integer quantidadeLetraComEspaco(String text){
-        String textoSemEspaco = text.replaceAll(" ", "");
-        Integer quantidadeSemEspaco = textoSemEspaco.length();
-        return quantidadeSemEspaco;
+        Integer quantidadeSemEspaco;
+        return quantidadeSemEspaco = text.replaceAll(" ", "").length();
     }
     public String quatroPrimeirasLetrasDoNome(String nome){
         return nome = nome.substring(0,4);
